@@ -14,7 +14,7 @@ GoReaper é uma ferramenta de brute-force desenvolvida em Go para testar credenc
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seuusuario/GoReaper.git
+   git clone https://github.com/Mogra12/GoReaper.git
    cd GoReaper
    ```
 
