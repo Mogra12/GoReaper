@@ -1,64 +1,63 @@
 # GoReaper
 
-GoReaper é uma ferramenta de brute-force desenvolvida em Go para testar credenciais de FTP e SSH. Suporta ataques simultâneos e pode utilizar TLS para conexões seguras.
+GoReaper is a brute-force tool developed in Go to test FTP and SSH credentials. It supports concurrent attacks and can use TLS for secure connections.
 
-## Recursos
+## Features
 
-- Suporte a ataques de brute-force em FTP e SSH.
-- Execução simultânea com limite configurável de conexões.
-- Opção para conexão FTPS (FTP sobre TLS).
-- Configuração flexível via linha de comando.
-- Suporte para listas de usuários e senhas separadas no ataque SSH.
+- Support for brute-force attacks on FTP and SSH.
+- Concurrent execution with configurable connection limits.
+- Option for FTPS (FTP over TLS) connection.
+- Flexible configuration via command line.
+- Support for separate user and password lists in SSH attack.
 
-## Instalação
+## Installation
 
-1. Clone este repositório:
+1. Clone this repository:
    ```bash
    git clone https://github.com/Mogra12/GoReaper.git
    cd GoReaper
    ```
 
-2. Instale as dependências:
+2. Install dependencies:
    ```bash
    go mod tidy
    ```
 
-3. Compile o programa:
+3. Compile the program:
    ```bash
    go build -o goreaper main.go
    ```
 
-## Uso
+## Usage
 
-### Ataque FTP
+### FTP Attack
 
 ```bash
 goreaper -Cn 10 -tls -w wordlist.txt -t target:21 -time 2
 ```
 
-#### Parâmetros FTP:
-- `-Cn`   : Define o número máximo de conexões simultâneas.
-- `-tls`  : Usa FTPS (FTP sobre TLS).
-- `-w`    : Caminho para o arquivo da wordlist.
-- `-t`    : Endereço do servidor FTP (exemplo: hostname:21).
-- `-time` : Tempo de espera em segundos entre tentativas de login (quando `lwr` está ativo).
+#### FTP Parameters:
+- `-Cn`   : Set the maximum number of simultaneous connections.
+- `-tls`  : Use FTPS (FTP over TLS).
+- `-w`    : Path to the wordlist file.
+- `-t`    : FTP server address (e.g., hostname:21).
+- `-time` : Timeout in seconds between login attempts (when `lwr` is active).
 
-### Ataque SSH
+### SSH Attack
 
 ```bash
 goreaper -U users.txt -P passwords.txt -t target:22
 ```
 
-#### Parâmetros SSH:
-- `-U` : Caminho para a wordlist de usuários.
-- `-P` : Caminho para a wordlist de senhas.
-- `-T` : Endereço do servidor SSH (exemplo: target:22).
+#### SSH Parameters:
+- `-U` : Path to the user wordlist.
+- `-P` : Path to the password wordlist.
+- `-T` : SSH server address (e.g., target:22).
 
-## Contribuição
+## Contribution
 
-Sinta-se à vontade para abrir issues e enviar PRs para melhorias!
+Feel free to open issues and submit PRs for improvements!
 
-## Aviso Legal
+## Legal Disclaimer
 
-**Esta ferramenta deve ser usada apenas para testes de segurança em ambientes autorizados. O uso indevido pode resultar em penalidades legais.**
-
+**This tool should only be used for security testing in authorized environments. Misuse may result in legal penalties.**
